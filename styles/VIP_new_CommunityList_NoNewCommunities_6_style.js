@@ -8,7 +8,7 @@ var style_VIP_new_CommunityList_NoNewCommunities_6 = function(feature, resolutio
     };
     
     var labelText = ""; var value = feature.get("");
-    var labelFont = "13.0px \'Roboto\', sans-serif";
+    var labelFont = "6.5px \'Roboto\', sans-serif";
     var labelFill = "#000000";
     var bufferColor = "#ffffff";
     var bufferWidth = 0.5;
