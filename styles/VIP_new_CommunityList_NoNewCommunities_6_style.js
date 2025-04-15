@@ -7,11 +7,12 @@ var style_VIP_new_CommunityList_NoNewCommunities_6 = function(feature, resolutio
         variables: {}
     };
     
-    var labelText = ""; var value = feature.get("");
-    var labelFont = "6.5px \'Roboto\', sans-serif";
+    var labelText = ""; 
+    var value = feature.get("");
+    var labelFont = "9.1px \'Roboto\', sans-serif";
     var labelFill = "#000000";
     var bufferColor = "#ffffff";
-    var bufferWidth = 0.5;
+    var bufferWidth = 1.5;
     var textAlign = "left";
     var offsetX = 0;
     var offsetY = 0;

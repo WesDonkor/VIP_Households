@@ -7,11 +7,12 @@ var style_boundary_administrative_admin_level_6_NorthernRegionGhana_3 = function
         variables: {}
     };
     
-    var labelText = ""; var value = feature.get("");
+    var labelText = ""; 
+    var value = feature.get("");
     var labelFont = "19.5px \'Roboto\', sans-serif";
     var labelFill = "#ffffff";
     var bufferColor = "#e31a1c";
-    var bufferWidth = 1.0;
+    var bufferWidth = 3.0;
     var textAlign = "left";
     var offsetX = 0;
     var offsetY = 0;

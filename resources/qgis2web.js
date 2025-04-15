@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-1.334414, 9.449136, -1.076628, 9.569770], map.getSize());
+map.getView().fit([-1.083591, 9.514007, -1.075535, 9.517777], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -72,7 +72,8 @@ closer.onclick = function() {
     return false;
 };
 var overlayPopup = new ol.Overlay({
-    element: container
+    element: container,
+	autoPan: true
 });
 map.addOverlay(overlayPopup)
     
@@ -121,7 +122,7 @@ var doHover = true;
 function createPopupField(currentFeature, currentFeatureKeys, layer) {
     var popupText = '';
     for (var i = 0; i < currentFeatureKeys.length; i++) {
-        if (currentFeatureKeys[i] != 'geometry') {
+        if (currentFeatureKeys[i] != 'geometry' && currentFeatureKeys[i] != 'layerObject' && currentFeatureKeys[i] != 'idO') {
             var popupField = '';
             if (layer.get('fieldLabels')[currentFeatureKeys[i]] == "hidden field") {
                 continue;
@@ -279,9 +280,9 @@ function onPointerMove(evt) {
 
     if (doHover) {
         if (popupText) {
+			content.innerHTML = popupText;
+            container.style.display = 'block';
             overlayPopup.setPosition(coord);
-            content.innerHTML = popupText;
-            container.style.display = 'block';        
         } else {
             container.style.display = 'none';
             closer.blur();
@@ -297,9 +298,9 @@ var featuresPopupActive = false;
 
 function updatePopup() {
     if (popupContent) {
-        overlayPopup.setPosition(popupCoord);
         content.innerHTML = popupContent;
         container.style.display = 'block';
+		overlayPopup.setPosition(popupCoord);
     } else {
         container.style.display = 'none';
         closer.blur();
@@ -367,9 +368,9 @@ function onSingleClickWMS(evt) {
     if (doHover || sketch) {
         return;
     }
-	if (!featuresPopupActive) {
-		popupContent = '';
-	}
+    if (!featuresPopupActive) {
+        popupContent = '';
+    }
     var coord = evt.coordinate;
     var viewProjection = map.getView().getProjection();
     var viewResolution = map.getView().getResolution();
@@ -380,12 +381,12 @@ function onSingleClickWMS(evt) {
                 evt.coordinate, viewResolution, viewProjection, {
                     'INFO_FORMAT': 'text/html',
                 });
-            if (url) {				
-                const wmsTitle = wms_layers[i][0].get('popuplayertitle');					
+            if (url) {
+                const wmsTitle = wms_layers[i][0].get('popuplayertitle');
                 var ldsRoller = '<div id="lds-roller"><img class="lds-roller-img" style="height: 25px; width: 25px;"></img></div>';
-				
+
                 popupCoord = coord;
-				popupContent += ldsRoller;
+                popupContent += ldsRoller;
                 updatePopup();
 
                 var timeoutPromise = new Promise((resolve, reject) => {
@@ -394,30 +395,44 @@ function onSingleClickWMS(evt) {
                     }, 5000); // (5 second)
                 });
 
-                Promise.race([
-                    fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url)),
-                    timeoutPromise
-                ])
-                .then((response) => {
-                    if (response.ok) {
-                        return response.text();
+                // Function to try fetch with different option
+                function tryFetch(urls) {
+                    if (urls.length === 0) {
+                        return Promise.reject(new Error('All fetch attempts failed'));
                     }
-                })
-                .then((html) => {
-                    if (html.indexOf('<table') !== -1) {
-                        popupContent += '<a><b>' + wmsTitle + '</b></a>';
-                        popupContent += html + '<p></p>';
-                        updatePopup();
-                    }
-                })
-                // .catch((error) => {
-				// })
-                .finally(() => {
-                    setTimeout(() => {
-                        var loaderIcon = document.querySelector('#lds-roller');
-						loaderIcon.remove();
-                    }, 500); // (0.5 second)	
-                });
+                    return fetch(urls[0])
+                        .then((response) => {
+                            if (response.ok) {
+                                return response.text();
+                            } else {
+                                throw new Error('Fetch failed');
+                            }
+                        })
+                        .catch(() => tryFetch(urls.slice(1))); // Try next URL
+                }
+
+                // List of URLs to try
+                // The first URL is the original, the second is the encoded version, and the third is the proxy
+                const urlsToTry = [
+                    url,
+                    encodeURIComponent(url),
+                    'https://api.allorigins.win/raw?url=' + encodeURIComponent(url)
+                ];
+
+                Promise.race([tryFetch(urlsToTry), timeoutPromise])
+                    .then((html) => {
+                        if (html.indexOf('<table') !== -1) {
+                            popupContent += '<a><b>' + wmsTitle + '</b></a>';
+                            popupContent += html + '<p></p>';
+                            updatePopup();
+                        }
+                    })
+                    .finally(() => {
+                        setTimeout(() => {
+                            var loaderIcon = document.querySelector('#lds-roller');
+                            if (loaderIcon) loaderIcon.remove();
+                        }, 500); // (0.5 second)
+                    });
             }
         }
     }

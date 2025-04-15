@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-//ol.proj.get("EPSG:4326").setExtent([-1.334414, 9.449136, -1.076628, 9.569770]);
+//ol.proj.get("EPSG:4326").setExtent([-1.083591, 9.514007, -1.075535, 9.517777]);
 var wms_layers = [];
 
 
@@ -50,40 +50,40 @@ var lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3 = new ol.lay
                 interactive: true,
                 title: '<img src="styles/legend/boundary_administrative_admin_level_6_NorthernRegionGhana_3.png" /> boundary_administrative_admin_level_6_Northern Region, Ghana '
             });
-var format_EnumPinnedGPS_020425_4 = new ol.format.GeoJSON();
-var features_EnumPinnedGPS_020425_4 = format_EnumPinnedGPS_020425_4.readFeatures(json_EnumPinnedGPS_020425_4, 
+var format_SystempinnedGPS_150425_4 = new ol.format.GeoJSON();
+var features_SystempinnedGPS_150425_4 = format_SystempinnedGPS_150425_4.readFeatures(json_SystempinnedGPS_150425_4, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4326'});
-var jsonSource_EnumPinnedGPS_020425_4 = new ol.source.Vector({
+var jsonSource_SystempinnedGPS_150425_4 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_EnumPinnedGPS_020425_4.addFeatures(features_EnumPinnedGPS_020425_4);
-var lyr_EnumPinnedGPS_020425_4 = new ol.layer.Vector({
+jsonSource_SystempinnedGPS_150425_4.addFeatures(features_SystempinnedGPS_150425_4);
+var lyr_SystempinnedGPS_150425_4 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_EnumPinnedGPS_020425_4, 
-                style: style_EnumPinnedGPS_020425_4,
-                popuplayertitle: 'Enum Pinned GPS_020425',
+                source:jsonSource_SystempinnedGPS_150425_4, 
+                style: style_SystempinnedGPS_150425_4,
+                popuplayertitle: 'System pinned GPS_150425',
                 interactive: true,
-    title: 'Enum Pinned GPS_020425<br />\
-    <img src="styles/legend/EnumPinnedGPS_020425_4_0.png" /> Completed<br />\
-    <img src="styles/legend/EnumPinnedGPS_020425_4_1.png" /> None of the eating groups qualify<br />\
-    <img src="styles/legend/EnumPinnedGPS_020425_4_2.png" /> Refused<br />' });
-var format_SystempinnedGPS_020425_5 = new ol.format.GeoJSON();
-var features_SystempinnedGPS_020425_5 = format_SystempinnedGPS_020425_5.readFeatures(json_SystempinnedGPS_020425_5, 
+    title: 'System pinned GPS_150425<br />\
+    <img src="styles/legend/SystempinnedGPS_150425_4_0.png" /> Completed<br />\
+    <img src="styles/legend/SystempinnedGPS_150425_4_1.png" /> None of the eating groups qualify<br />\
+    <img src="styles/legend/SystempinnedGPS_150425_4_2.png" /> Refused<br />' });
+var format_EnumPinnedGPS_150425_5 = new ol.format.GeoJSON();
+var features_EnumPinnedGPS_150425_5 = format_EnumPinnedGPS_150425_5.readFeatures(json_EnumPinnedGPS_150425_5, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4326'});
-var jsonSource_SystempinnedGPS_020425_5 = new ol.source.Vector({
+var jsonSource_EnumPinnedGPS_150425_5 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_SystempinnedGPS_020425_5.addFeatures(features_SystempinnedGPS_020425_5);
-var lyr_SystempinnedGPS_020425_5 = new ol.layer.Vector({
+jsonSource_EnumPinnedGPS_150425_5.addFeatures(features_EnumPinnedGPS_150425_5);
+var lyr_EnumPinnedGPS_150425_5 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_SystempinnedGPS_020425_5, 
-                style: style_SystempinnedGPS_020425_5,
-                popuplayertitle: 'System pinned GPS_020425',
+                source:jsonSource_EnumPinnedGPS_150425_5, 
+                style: style_EnumPinnedGPS_150425_5,
+                popuplayertitle: 'Enum Pinned GPS_150425',
                 interactive: true,
-    title: 'System pinned GPS_020425<br />\
-    <img src="styles/legend/SystempinnedGPS_020425_5_0.png" /> Completed<br />\
-    <img src="styles/legend/SystempinnedGPS_020425_5_1.png" /> None of the eating groups qualify<br />\
-    <img src="styles/legend/SystempinnedGPS_020425_5_2.png" /> Refused<br />' });
+    title: 'Enum Pinned GPS_150425<br />\
+    <img src="styles/legend/EnumPinnedGPS_150425_5_0.png" /> Completed<br />\
+    <img src="styles/legend/EnumPinnedGPS_150425_5_1.png" /> None of the eating groups qualify<br />\
+    <img src="styles/legend/EnumPinnedGPS_150425_5_2.png" /> Refused<br />' });
 var format_VIP_new_CommunityList_NoNewCommunities_6 = new ol.format.GeoJSON();
 var features_VIP_new_CommunityList_NoNewCommunities_6 = format_VIP_new_CommunityList_NoNewCommunities_6.readFeatures(json_VIP_new_CommunityList_NoNewCommunities_6, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4326'});
@@ -100,20 +100,20 @@ var lyr_VIP_new_CommunityList_NoNewCommunities_6 = new ol.layer.Vector({
                 title: '<img src="styles/legend/VIP_new_CommunityList_NoNewCommunities_6.png" /> VIP_new_CommunityList_NoNewCommunities'
             });
 
-lyr_GoogleMaps_0.setVisible(true);lyr_GoogleSatellite_1.setVisible(true);lyr_OSMStandard_2.setVisible(true);lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3.setVisible(true);lyr_EnumPinnedGPS_020425_4.setVisible(true);lyr_SystempinnedGPS_020425_5.setVisible(true);lyr_VIP_new_CommunityList_NoNewCommunities_6.setVisible(true);
-var layersList = [lyr_GoogleMaps_0,lyr_GoogleSatellite_1,lyr_OSMStandard_2,lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3,lyr_EnumPinnedGPS_020425_4,lyr_SystempinnedGPS_020425_5,lyr_VIP_new_CommunityList_NoNewCommunities_6];
+lyr_GoogleMaps_0.setVisible(true);lyr_GoogleSatellite_1.setVisible(true);lyr_OSMStandard_2.setVisible(true);lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3.setVisible(true);lyr_SystempinnedGPS_150425_4.setVisible(true);lyr_EnumPinnedGPS_150425_5.setVisible(true);lyr_VIP_new_CommunityList_NoNewCommunities_6.setVisible(true);
+var layersList = [lyr_GoogleMaps_0,lyr_GoogleSatellite_1,lyr_OSMStandard_2,lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3,lyr_SystempinnedGPS_150425_4,lyr_EnumPinnedGPS_150425_5,lyr_VIP_new_CommunityList_NoNewCommunities_6];
 lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3.set('fieldAliases', {'full_id': 'full_id', 'osm_id': 'osm_id', 'osm_type': 'osm_type', 'admin_level': 'admin_level', 'boundary': 'boundary', 'wikipedia': 'wikipedia', 'wikidata': 'wikidata', 'type': 'type', 'name:fr': 'name:fr', 'name': 'name', });
-lyr_EnumPinnedGPS_020425_4.set('fieldAliases', {'community': 'Name of the community', 'e_gpslatitude': 'e_gpslatitude', 'e_gpslongitude': 'e_gpslongitude', 'e_gpsaltitude': 'e_gpsaltitude', 'e_gpsaccuracy': 'e_gpsaccuracy', 'outcome': 'Outcome of the census', 'starttime': 'Time census survey was started', 'endtime': 'Time census survey was ended', 'Start Time Rank': 'Start time rank of census survey in the community', 'End Time Rank': 'End time rank of census survey in the community', 'compid': 'ID of the census compound', });
-lyr_SystempinnedGPS_020425_5.set('fieldAliases', {'community': 'Name of community', 's_gpsblatitude': 's_gpsblatitude', 's_gpsblongitude': 's_gpsblongitude', 's_gpsbaltitude': 's_gpsbaltitude', 's_gpsbaccuracy': 's_gpsbaccuracy', 'outcome': 'Outcome of the census survey', 'starttime': 'Time the census survey was started', 'endtime': 'Time the census survey was ended', 'Start Time Rank': 'Start time rank of census survey', 'End Time Rank': 'End time rank of census survey', 'compid': 'compid', });
+lyr_SystempinnedGPS_150425_4.set('fieldAliases', {'community': 'Name of community', 's_gpsblatitude': 's_gpsblatitude', 's_gpsblongitude': 's_gpsblongitude', 's_gpsbaltitude': 's_gpsbaltitude', 's_gpsbaccuracy': 's_gpsbaccuracy', 'outcome': 'Outcome of the survey', 'starttime': 'Time survey was started', 'endtime': 'Time survey was ended', 'Start Time Rank': 'Rank of survey using the start time', 'End Time Rank': 'Rank of survey using the end time', 'compid': 'Compound ID of respondent', });
+lyr_EnumPinnedGPS_150425_5.set('fieldAliases', {'community': 'Name of community', 'e_gpslatitude': 'e_gpslatitude', 'e_gpslongitude': 'e_gpslongitude', 'e_gpsaltitude': 'e_gpsaltitude', 'e_gpsaccuracy': 'e_gpsaccuracy', 'outcome': 'Outcome of the survey', 'starttime': 'Time survey was started', 'endtime': 'Time survey was ended', 'Start Time Rank': 'Rank of survey using the start time', 'End Time Rank': 'Rank of survey using the end time', 'compid': 'Compound ID of respondent', });
 lyr_VIP_new_CommunityList_NoNewCommunities_6.set('fieldAliases', {'district': 'Name of District', 'district_id': 'district_id', 'community': 'Name of Community', 'community_id': 'community_id', 'commcode': 'commcode', 'gpslatitude': 'gpslatitude', 'gpslongitude': 'gpslongitude', 'gpsaltitude': 'gpsaltitude', 'gpsaccuracy': 'gpsaccuracy', 'Census target': 'Target number of coumpounds for Census', 'baseline_target': 'Target Number of households for Baseline', 'interval to skip': 'Number of compounds to skip', 'Cohort': 'Community cohort number', });
 lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3.set('fieldImages', {'full_id': 'TextEdit', 'osm_id': 'TextEdit', 'osm_type': 'TextEdit', 'admin_level': 'TextEdit', 'boundary': 'TextEdit', 'wikipedia': 'TextEdit', 'wikidata': 'TextEdit', 'type': 'TextEdit', 'name:fr': 'TextEdit', 'name': 'TextEdit', });
-lyr_EnumPinnedGPS_020425_4.set('fieldImages', {'community': 'TextEdit', 'e_gpslatitude': 'TextEdit', 'e_gpslongitude': 'TextEdit', 'e_gpsaltitude': 'TextEdit', 'e_gpsaccuracy': 'TextEdit', 'outcome': 'TextEdit', 'starttime': 'TextEdit', 'endtime': 'TextEdit', 'Start Time Rank': 'Range', 'End Time Rank': 'Range', 'compid': 'TextEdit', });
-lyr_SystempinnedGPS_020425_5.set('fieldImages', {'community': 'TextEdit', 's_gpsblatitude': 'TextEdit', 's_gpsblongitude': 'TextEdit', 's_gpsbaltitude': 'TextEdit', 's_gpsbaccuracy': 'TextEdit', 'outcome': 'TextEdit', 'starttime': 'TextEdit', 'endtime': 'TextEdit', 'Start Time Rank': 'Range', 'End Time Rank': 'Range', 'compid': 'TextEdit', });
+lyr_SystempinnedGPS_150425_4.set('fieldImages', {'community': 'TextEdit', 's_gpsblatitude': 'TextEdit', 's_gpsblongitude': 'TextEdit', 's_gpsbaltitude': 'TextEdit', 's_gpsbaccuracy': 'TextEdit', 'outcome': 'TextEdit', 'starttime': 'TextEdit', 'endtime': 'TextEdit', 'Start Time Rank': 'Range', 'End Time Rank': 'Range', 'compid': 'TextEdit', });
+lyr_EnumPinnedGPS_150425_5.set('fieldImages', {'community': 'TextEdit', 'e_gpslatitude': 'TextEdit', 'e_gpslongitude': 'TextEdit', 'e_gpsaltitude': 'TextEdit', 'e_gpsaccuracy': 'TextEdit', 'outcome': 'TextEdit', 'starttime': 'TextEdit', 'endtime': 'TextEdit', 'Start Time Rank': 'Range', 'End Time Rank': 'Range', 'compid': 'TextEdit', });
 lyr_VIP_new_CommunityList_NoNewCommunities_6.set('fieldImages', {'district': 'TextEdit', 'district_id': 'Range', 'community': 'TextEdit', 'community_id': 'Range', 'commcode': 'Range', 'gpslatitude': 'TextEdit', 'gpslongitude': 'TextEdit', 'gpsaltitude': 'TextEdit', 'gpsaccuracy': 'TextEdit', 'Census target': 'Range', 'baseline_target': 'Range', 'interval to skip': 'Range', 'Cohort': 'Range', });
 lyr_boundary_administrative_admin_level_6_NorthernRegionGhana_3.set('fieldLabels', {'full_id': 'hidden field', 'osm_id': 'hidden field', 'osm_type': 'hidden field', 'admin_level': 'hidden field', 'boundary': 'hidden field', 'wikipedia': 'hidden field', 'wikidata': 'hidden field', 'type': 'hidden field', 'name:fr': 'hidden field', 'name': 'inline label - always visible', });
-lyr_EnumPinnedGPS_020425_4.set('fieldLabels', {'community': 'inline label - always visible', 'e_gpslatitude': 'hidden field', 'e_gpslongitude': 'hidden field', 'e_gpsaltitude': 'hidden field', 'e_gpsaccuracy': 'hidden field', 'outcome': 'inline label - always visible', 'starttime': 'hidden field', 'endtime': 'hidden field', 'Start Time Rank': 'inline label - always visible', 'End Time Rank': 'inline label - always visible', 'compid': 'inline label - always visible', });
-lyr_SystempinnedGPS_020425_5.set('fieldLabels', {'community': 'inline label - always visible', 's_gpsblatitude': 'hidden field', 's_gpsblongitude': 'hidden field', 's_gpsbaltitude': 'hidden field', 's_gpsbaccuracy': 'hidden field', 'outcome': 'inline label - always visible', 'starttime': 'hidden field', 'endtime': 'hidden field', 'Start Time Rank': 'inline label - always visible', 'End Time Rank': 'inline label - always visible', 'compid': 'inline label - always visible', });
-lyr_VIP_new_CommunityList_NoNewCommunities_6.set('fieldLabels', {'district': 'inline label - always visible', 'district_id': 'hidden field', 'community': 'hidden field', 'community_id': 'hidden field', 'commcode': 'hidden field', 'gpslatitude': 'hidden field', 'gpslongitude': 'hidden field', 'gpsaltitude': 'hidden field', 'gpsaccuracy': 'hidden field', 'Census target': 'inline label - always visible', 'baseline_target': 'inline label - always visible', 'interval to skip': 'inline label - always visible', 'Cohort': 'inline label - always visible', });
+lyr_SystempinnedGPS_150425_4.set('fieldLabels', {'community': 'inline label - visible with data', 's_gpsblatitude': 'hidden field', 's_gpsblongitude': 'hidden field', 's_gpsbaltitude': 'hidden field', 's_gpsbaccuracy': 'hidden field', 'outcome': 'inline label - visible with data', 'starttime': 'hidden field', 'endtime': 'hidden field', 'Start Time Rank': 'inline label - visible with data', 'End Time Rank': 'inline label - visible with data', 'compid': 'inline label - visible with data', });
+lyr_EnumPinnedGPS_150425_5.set('fieldLabels', {'community': 'inline label - visible with data', 'e_gpslatitude': 'hidden field', 'e_gpslongitude': 'hidden field', 'e_gpsaltitude': 'hidden field', 'e_gpsaccuracy': 'hidden field', 'outcome': 'inline label - visible with data', 'starttime': 'hidden field', 'endtime': 'hidden field', 'Start Time Rank': 'inline label - visible with data', 'End Time Rank': 'inline label - visible with data', 'compid': 'inline label - visible with data', });
+lyr_VIP_new_CommunityList_NoNewCommunities_6.set('fieldLabels', {'district': 'inline label - visible with data', 'district_id': 'hidden field', 'community': 'hidden field', 'community_id': 'inline label - visible with data', 'commcode': 'hidden field', 'gpslatitude': 'hidden field', 'gpslongitude': 'hidden field', 'gpsaltitude': 'hidden field', 'gpsaccuracy': 'hidden field', 'Census target': 'inline label - visible with data', 'baseline_target': 'inline label - visible with data', 'interval to skip': 'inline label - visible with data', 'Cohort': 'inline label - visible with data', });
 lyr_VIP_new_CommunityList_NoNewCommunities_6.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
